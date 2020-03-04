@@ -3,8 +3,9 @@ import { select, NgRedux } from '@angular-redux/store';
 import { IAppState } from '../store';
 import { SHOW_REGISTER, HIDE_REGISTER } from '../actions';
 import { HttpService } from '../http.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-login-register',
@@ -13,7 +14,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginRegisterComponent implements OnInit {
   @select('register') register;
-  constructor(private ngRedux: NgRedux<IAppState>, private router: Router, private auth: AuthService) { }
+  constructor(private ngRedux: NgRedux<IAppState>, private router: Router, private auth: AuthService, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -33,7 +34,8 @@ export class LoginRegisterComponent implements OnInit {
     this.auth.onLogin(name, password)
       .subscribe(result => {
         if (result) {
-          this.router.navigate(['/']);
+          let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+          this.router.navigate([returnUrl || '/']);
         } else {
         }
       });;

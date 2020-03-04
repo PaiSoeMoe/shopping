@@ -7,6 +7,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CheckoutComponent } from './checkout/checkout.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { AuthGuard } from './auth-guard.service';
 
 
 const routes: Routes = [{ path: "", component: HomeComponent },
@@ -14,7 +15,7 @@ const routes: Routes = [{ path: "", component: HomeComponent },
 { path: "products/:cat/:subcat/:id", component: ProductDetailComponent },
 { path: "login-register", component: LoginRegisterComponent },
 { path: "my-account", component: MyAccountComponent },
-{ path: "products/men/all", component: ProductsComponent },
+{ path: "products/men/all", component: ProductsComponent, canActivate: [AuthGuard] },
 { path: "products/men/20-discount", component: ProductsComponent },
 { path: "products/men/buy-one-get-one", component: ProductsComponent },
 { path: "products/men/hoodies-sweatshirts", component: ProductsComponent },
