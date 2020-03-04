@@ -24,10 +24,12 @@
             <li>
                 <h4>Account</h4>
                 <ul>
-                    <li><a routerLink="login-register" (click)="showLogin($event)">Login</a></li>
-                    <li><a routerLink="login-register" (click)="showRegister($event)">Creat Account</a></li>
-                    <li><a (click)="auth.onLogOut($event)">Log Out</a></li>
-                    <li><a routerLink="my-account">My Account</a></li>
+                    <li *ngIf="!auth.isLoggedIn()"><a routerLink="login-register" (click)="showLogin($event)">Login</a>
+                    </li>
+                    <li *ngIf="!auth.isLoggedIn()"><a routerLink="login-register" (click)="showRegister($event)">Creat
+                            Account</a></li>
+                    <li *ngIf="auth.isLoggedIn()"><a (click)="auth.onLogOut($event)">Log Out</a></li>
+                    <li *ngIf="auth.isLoggedIn()"><a routerLink="my-account">My Account</a></li>
                 </ul>
             </li>
         </ul>

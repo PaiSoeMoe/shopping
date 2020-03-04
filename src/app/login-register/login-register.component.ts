@@ -28,7 +28,7 @@ export class LoginRegisterComponent implements OnInit {
     this.ngRedux.dispatch({ type: HIDE_REGISTER })
   }
 
-  LogIn(e, name, password) {
+  onLogin(e, name, password) {
     e.stopPropagation();
     this.auth.onLogin(name, password)
       .subscribe(result => {
