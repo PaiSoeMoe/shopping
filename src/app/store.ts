@@ -1,6 +1,6 @@
 import { HIDE_CART, SHOW_HIDE_CART, SHOW_HIDE_SETTING, HIDE_SETTING, SHOW_MOBILE_MENU, TAB_CHANGE, SHOW_QUICK_VIEW, HIDE_QUICK_VIEW, ADD_TO_CART, REMOVE_FROM_CART, SET_PRODUCTS, CLEAR_SHOPPING_CART, SHOW_HIDE_FILTER, SHOW_REGISTER, HIDE_REGISTER } from "src/app/actions";
 import { getCurrencySymbol } from '@angular/common';
-import { ProductAreaComponent } from './product-area/product-area.component';
+
 
 export interface Product {
   _id: String,
@@ -46,6 +46,8 @@ interface cartItem {
   quantity: Number
 }
 
+
+
 export interface IAppState {
   cartShow: Boolean,
   settAnimateState: String,
@@ -58,6 +60,7 @@ export interface IAppState {
   filter: Boolean,
   register: Boolean
 }
+
 
 
 

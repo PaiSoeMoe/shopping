@@ -18,10 +18,8 @@ import { MobileMenuWrapComponent } from './mobile-menu-wrap/mobile-menu-wrap.com
 
 import { SliderComponent } from './slider/slider.component';
 import { BannerAreaComponent } from './banner-area/banner-area.component';
-import { ProductAreaComponent } from './product-area/product-area.component';
 import { CardComponent } from './card/card.component';
-import { BannerArea2Component } from './banner-area2/banner-area2.component';
-import { FeatureAreaComponent } from './feature-area/feature-area.component';
+
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -53,10 +51,7 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
     MobileMenuWrapComponent,
     SliderComponent,
     BannerAreaComponent,
-    ProductAreaComponent,
     CardComponent,
-    BannerArea2Component,
-    FeatureAreaComponent,
     FooterComponent,
     ProductsComponent,
     SidebarComponent,
