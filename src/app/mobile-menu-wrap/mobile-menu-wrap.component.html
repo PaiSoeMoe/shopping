@@ -1,0 +1,80 @@
+<div class="mobile-off-canvas-active" [class.inside]="showMobileMenu | async">
+    <a class="mobile-aside-close" (click)="closeMenu($event)"><i class="sli sli-close"></i></a>
+    <div class="header-mobile-aside-wrap">
+        <div class="mobile-search">
+            <form class="search-form" action="#">
+                <input type="text" placeholder="Search entire store…">
+                <button class="button-search"><i class="sli sli-magnifier"></i></button>
+            </form>
+        </div>
+        <div class="mobile-menu-wrap">
+            <!-- mobile menu start -->
+            <div class="mobile-navigation">
+                <!-- mobile menu navigation start -->
+                <nav>
+                    <ul class="mobile-menu" *ngFor="let items of data">
+                        <li [class.menu-item-has-children]="items.children" [class.active]="items.active"><a
+                                href="shop.html">{{items.topNavLink}}</a>
+                            <span class="menu-expand" (click)="onClick($event,items.topNavLink,false)"><i></i></span>
+                            <ul class="dropdown" *ngIf="items.active">
+                                <li class="menu-item-has-children" [class.active]="item.active"
+                                    *ngFor="let item of items.subs"><a href="#">{{item.sub}}</a>
+                                    <span class="menu-expand" (click)="onClick($event,item.sub,true)"><i></i></span>
+                                    <ul class="dropdown" *ngIf="item.active">
+                                        <li *ngFor="let i of item.items"><a href="shop.html">{{i.name}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- mobile menu navigation end -->
+            </div>
+            <!-- mobile menu end -->
+        </div>
+        <div class="mobile-curr-lang-wrap">
+            <div class="single-mobile-curr-lang">
+                <a class="mobile-language-active" href="#" (click)="toggle($event,'language')">Language <i
+                        class="sli sli-arrow-down"></i></a>
+                <div class="lang-curr-dropdown lang-dropdown-active" *ngIf="curlang.language">
+                    <ul>
+                        <li><a href="#">English (US)</a></li>
+                        <li><a href="#">English (UK)</a></li>
+                        <li><a href="#">Spanish</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="single-mobile-curr-lang">
+                <a class="mobile-currency-active" href="#" (click)="toggle($event,'currency')">Currency <i
+                        class="sli sli-arrow-down"></i></a>
+                <div class="lang-curr-dropdown curr-dropdown-active" *ngIf="curlang.currency">
+                    <ul>
+                        <li><a href="#">USD</a></li>
+                        <li><a href="#">EUR</a></li>
+                        <li><a href="#">Real</a></li>
+                        <li><a href="#">BDT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="single-mobile-curr-lang">
+                <a class="mobile-account-active" href="#" (click)="toggle($event,'account')">My Account <i
+                        class="sli sli-arrow-down"></i></a>
+                <div class="lang-curr-dropdown account-dropdown-active" *ngIf="curlang.account">
+                    <ul>
+                        <li><a href="login-register.html">Login</a></li>
+                        <li><a href="login-register.html">Creat Account</a></li>
+                        <li><a href="my-account.html">My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-social-wrap">
+            <a class="facebook" href="#"><i class="sli sli-social-facebook"></i></a>
+            <a class="twitter" href="#"><i class="sli sli-social-twitter"></i></a>
+            <a class="pinterest" href="#"><i class="sli sli-social-pinterest"></i></a>
+            <a class="instagram" href="#"><i class="sli sli-social-instagram"></i></a>
+            <a class="google" href="#"><i class="sli sli-social-google"></i></a>
+        </div>
+    </div>
+</div>

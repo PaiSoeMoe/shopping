@@ -1,0 +1,8 @@
+.bg-blur{
+    width:100vw;
+    height:100vh;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.644);
+}

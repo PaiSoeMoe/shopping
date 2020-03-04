@@ -1,0 +1,48 @@
+<div class=" ">
+  <div class="main-menu">
+    <nav>
+      <ul>
+        <li class="angle-shape">
+          <a routerLink="/products/new-arrival/all" routerLinkActive="active">New Arrival <span>hot</span> </a>
+        </li>
+        <li class=" angle-shape">
+          <a routerLink="/products/men/all" routerLinkActive="active"> Men </a>
+          <ul class="mega-menu">
+            <li *ngFor="let cat of men">
+              <a class="menu-title" [routerLink]="cat.link">{{cat.name}}</a>
+              <ul>
+                <li *ngFor="let item of cat.value"><a [routerLink]="item.link">{{item.name}}</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="menu-title">Summer Styles</a>
+              <img src="../../../../assets/img/product/1.webp" alt="" width="100%" style="margin-top:20px">
+            </li>
+          </ul>
+        </li>
+        <li class="angle-shape">
+          <a routerLink="/products/women/all" routerLinkActive="active"> Women </a>
+          <ul class="mega-menu">
+            <li *ngFor="let cat of women">
+              <a class="menu-title" [routerLink]="cat.link">{{cat.name}}</a>
+              <ul>
+                <li *ngFor="let item of cat.value"><a [routerLink]="item.link">{{item.name}}</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="" class="menu-title">Summer Styles</a>
+              <img src="../../../../assets/img/1.webp" alt="" width="100%" style="margin-top:20px">
+            </li>
+          </ul>
+        </li>
+        <li class="angle-shape">
+          <a routerLink="/products/shoes/all" routerLinkActive="active"> Shoes </a>
+        </li>
+        <li class="angle-shape">
+          <a routerLink="/products/accessories/all" routerLinkActive="active"> Accessories </a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</div>

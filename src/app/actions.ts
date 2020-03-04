@@ -1,0 +1,15 @@
+export const HIDE_CART = "HIDE_CART";
+export const SHOW_HIDE_CART = "SHOW_HIDE_CART";
+export const SHOW_HIDE_SETTING = "SHOW_HIDE_SETTING";
+export const HIDE_SETTING = "HIDE_SETTING";
+export const SHOW_MOBILE_MENU = "SHOW_MOBILE_MENU";
+export const TAB_CHANGE = "TAB_CHANGE";
+export const SHOW_QUICK_VIEW = "SHOW_QUICK_VIEW";
+export const HIDE_QUICK_VIEW = "HIDE_QUICK_VIEW";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const SET_PRODUCTS = "SET_PRODUCTS";
+export const CLEAR_SHOPPING_CART = "CLEAR_SHOPPING_CART";
+export const SHOW_HIDE_FILTER = "SHOW_HIDE_FILTER";
+export const SHOW_REGISTER = "SHOW_REGISTER";
+export const HIDE_REGISTER = "HIDE_REGISTER";

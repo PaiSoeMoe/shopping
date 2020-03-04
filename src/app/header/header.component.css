@@ -1,0 +1,31 @@
+.sticky-bar.stick {
+  -webkit-animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+  background-color: #fff;
+  border-bottom: 0 solid #4a90e2;
+  -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  left: 0;
+  -webkit-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s; }
+.stick .logo {
+  padding-top: 25px; }
+
+.stick .main-menu > nav > ul > li > a {
+  line-height: 80px; }
+  .stick .main-menu > nav > ul > li > a span {
+    top: 8px; }
+
+.stick .header-right-wrap {
+  padding-top: 25px; }
+
+.stick .cart-wrap .shopping-cart-content {
+  top: 54px;
+  height: calc(100vh - 80px); }
+
+

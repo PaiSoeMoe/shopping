@@ -1,0 +1,172 @@
+.main-menu {
+  margin-left: 30px;
+}
+.main-menu > nav > ul > li {
+  display: inline-block;
+  margin: 0 24px;
+  position: relative;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .main-menu > nav > ul > li {
+    margin: 0 14px;
+  }
+}
+.main-menu > nav > ul > li.angle-shape::before {
+  border-bottom: 16px solid #fff;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  content: "";
+  height: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 0px;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  z-index: 9999;
+}
+.main-menu > nav > ul > li > a {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  line-height: 108px;
+}
+.main-menu > nav > ul > li > a > span {
+  position: absolute;
+  top: 21px;
+  right: -28px;
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  background-color: #ff3535;
+  display: inline-block;
+  color: #ffffff;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 3px 10px;
+}
+.main-menu > nav > ul > li ul.submenu {
+  background: #fff none repeat scroll 0 0;
+  -webkit-box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+  display: block;
+  left: 0;
+  padding: 22px 30px 24px;
+  position: absolute;
+  top: 100%;
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: center top 0;
+  -ms-transform-origin: center top 0;
+  transform-origin: center top 0;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  visibility: hidden;
+  width: 190px;
+  z-index: 999;
+}
+.main-menu > nav > ul > li ul.submenu li {
+  margin-bottom: 16px;
+}
+.main-menu > nav > ul > li ul.submenu li:last-child {
+  margin-bottom: 0px;
+}
+.main-menu > nav > ul > li ul.submenu li a {
+  font-weight: 300;
+  font-size: 14px;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
+  display: block;
+  text-transform: capitalize;
+}
+.main-menu > nav > ul > li ul.submenu li a:hover {
+  color: #ff3535;
+}
+.main-menu > nav > ul > li ul.mega-menu {
+  background-color: #fff;
+  display: block;
+  left: -273px;
+  padding: 23px 30px 62px 0;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: center top 0;
+  -ms-transform-origin: center top 0;
+  transform-origin: center top 0;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  visibility: hidden;
+  width: 972px;
+  z-index: 999;
+  -webkit-box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .main-menu > nav > ul > li ul.mega-menu {
+    width: 900px;
+  }
+}
+.main-menu > nav > ul > li ul.mega-menu > li {
+  display: inline-block;
+  float: left;
+  padding-left: 30px;
+  padding-right: 0;
+  width: 25%;
+}
+.main-menu > nav > ul > li ul.mega-menu > li a.menu-title {
+  color: #000000;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 18px;
+}
+.main-menu > nav > ul > li ul.mega-menu > li ul {
+  margin-top: 23px;
+}
+.main-menu > nav > ul > li ul.mega-menu > li ul li {
+  margin-bottom: 19px;
+}
+.main-menu > nav > ul > li ul.mega-menu > li ul li:last-child {
+  margin-bottom: 0px;
+}
+.main-menu > nav > ul > li ul.mega-menu > li ul li a {
+  font-weight: 300;
+  font-size: 14px;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
+  display: block;
+  text-transform: capitalize;
+}
+.main-menu > nav > ul > li ul.mega-menu > li ul li a:hover {
+  color: #ff3535;
+}
+.main-menu > nav > ul > li:hover > ul.mega-menu {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  visibility: visible;
+}
+.main-menu > nav > ul > li:hover > ul.submenu {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  visibility: visible;
+}
+.main-menu > nav > ul > li:hover a {
+  color: #ff3535;
+}
+.main-menu > nav > ul > li:hover.angle-shape::before {
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,0 +1,62 @@
+<div class="wrapper">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="shop-area pt-50 pb-100 section-padding-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3" [class.show-filter]="filter |async">
+                    <app-sidebar (filter)="onChange($event)" [tags]="tags" [sizes]="sizes" [colors]="colors"
+                        [onSale]="onSale" [inStock]="inStock" (reset)="onReset($event)">
+                    </app-sidebar>
+                </div>
+                <div class="col-lg-9">
+                    <div class="shop-top-bar">
+                        <div class="select-wrap">
+                            <div class="shop-select  mr-15">
+                                <select>
+                                    <option value="">Sort by</option>
+                                    <option value="">Sort by price</option>
+                                    <option value="">Sort by relevance</option>
+                                </select>
+                            </div>
+                            <button class="filter-by mr-15" (click)="showFilter($event)">Filter by</button>
+
+
+                            <p class="mr-15">Showing
+                                {{(pageNo-1)*12 +1}}–{{products?.length>pageNo*12?pageNo*12:products?.length}} of
+                                {{products?.length}} result
+                            </p>
+                        </div>
+                    </div>
+                    <div class="shop-bottom-area mt-35">
+                        <div class="tab-content jump">
+                            <div id="shop-1" class="tab-pane active">
+                                <div class="row ht-products">
+                                    <!-- "col-xl-4 col-md-4 col-lg-4 col-sm-6" -->
+                                    <div class="product-wrapper">
+                                        <!--Product Start-->
+                                        <app-card class="bp-card" *ngFor="let product of paginatedProducts"
+                                            [product]="product">
+                                        </app-card>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pro-pagination-style text-center mt-30">
+                            <ul>
+                                <li><a class="prev" (click)="prev($event)"><i class="sli sli-arrow-left"></i></a></li>
+                                <li *ngFor="let page of pages" (click)="pagination(page)"><a
+                                        [class.active]="pageNo===page">{{page}}</a></li>
+
+                                <li><a class="next" (click)="next($event)"><i class="sli sli-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <app-modal></app-modal>
+</div>

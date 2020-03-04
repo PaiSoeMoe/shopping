@@ -1,0 +1,67 @@
+<div class="login-register-area pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <a [class.active]="(register | async)===false" data-toggle="tab" (click)="showLogin($event)">
+                            <h4> login </h4>
+                        </a>
+                        <a [class.active]="register | async" data-toggle="tab" (click)="showRegister($event)">
+                            <h4> register </h4>
+                        </a>
+                    </div>
+                    <div class="tab-content">
+                        <div id="lg1" class="tab-pane" [class.active]="(register | async)===false">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="#" method="post">
+                                        <input type="text" name="user-name" placeholder="Username" ngModel
+                                            #name1="ngModel">
+                                        <input type="password" name="user-password" placeholder="Password" ngModel
+                                            #password1="ngModel">
+                                        <div class="button-box">
+                                            <div class="login-toggle-btn">
+                                                <input type="checkbox">
+                                                <label>Remember me</label>
+                                                <a href="#">Forgot Password?</a>
+                                            </div>
+                                            <button type="submit"
+                                                (click)="onLogin($event,name1.value,password1.value)">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="lg2" class="tab-pane" [class.active]="register | async">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form>
+                                        <input type="text" name="user-name" placeholder="Username" ngModel
+                                            #name="ngModel">
+                                        <div class="alert alert-danger">Name is required.</div>
+                                        <input type="password" name="user-password" placeholder="Password" required
+                                            minlength="7" ngModel #password="ngModel">
+                                        <div *ngIf="password.touched && password.errors?.required"
+                                            class="alert alert-danger">Password is required.</div>
+                                        <div *ngIf="password.touched && password.errors?.minlength"
+                                            class="alert alert-danger">Password must be at least 7 characters long.
+                                        </div>
+                                        <input name="user-email" placeholder="Email" type="email" required ngModel
+                                            #email="ngModel">
+                                        <div class="button-box">
+                                            <div *ngIf="password.touched && password.errors?.required"
+                                                class="alert alert-danger">Email is required.</div>
+                                            <button type="submit"
+                                                (click)="onRegister($event,name.value,password.value,email.value)">Register</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

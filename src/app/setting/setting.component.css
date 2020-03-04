@@ -1,0 +1,77 @@
+.setting-wrap {
+  margin-left: 26px;
+}
+.setting-wrap button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 0;
+}
+ .setting-wrap button:hover {
+  color: #ff3535;
+}
+ .setting-wrap .setting-content {
+  background: #fff none repeat scroll 0 0;
+  padding: 26px 30px 32px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 300px;
+  z-index: 4;
+  -webkit-box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+  max-height: 636px;
+  overflow-y: auto;
+  visibility: hidden;
+}
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+   .setting-wrap .setting-content {
+    max-height: 510px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+   .setting-wrap .setting-content {
+    max-height: 400px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+   .setting-wrap .setting-content {
+    max-height: 400px;
+  }
+}
+ .setting-wrap .setting-content ul li {
+  padding-bottom: 25px;
+}
+ .setting-wrap .setting-content ul li:last-child {
+  padding-bottom: 0px;
+}
+ .setting-wrap .setting-content ul li h4 {
+  font-size: 16px;
+  margin: 0;
+  color: #000000;
+  padding-bottom: 19px;
+  border-bottom: 1px solid #cccccc;
+  letter-spacing: 0.2px;
+}
+ .setting-wrap .setting-content ul li ul {
+  padding-top: 18px;
+}
+ .setting-wrap .setting-content ul li ul li {
+  padding-bottom: 31px;
+}
+ .setting-wrap .setting-content ul li ul li:last-child {
+  padding-bottom: 0px;
+}
+ .setting-wrap .setting-content ul li ul li a {
+  letter-spacing: 0.2px;
+  color: #000000;
+  font-weight: 300;
+  display: block;
+  line-height: 1;
+}
+ .setting-wrap .setting-content ul li ul li a:hover {
+  color: #ff3535;
+}
+ .setting-wrap:hover {
+  color: #ff3535;
+}

@@ -1,0 +1,70 @@
+<div class="sidebar-style mr-30">
+    <form action="" ngForm #form="ngForm" (change)="onChange($event,form)">
+        <div class="sidebar-widget">
+            <h4 class="pro-sidebar-title">Filter By</h4>
+            <div class="sidebar-widget-list mt-30">
+                <ul>
+                    <li>
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" name="onsale" id="onsale" ngModel #first="ngModel">
+                            <label for="onsale">On Sale <span>{{onSale}}</span> </label>
+
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" id="instock" name="instock" ngModel #second="ngModel">
+                            <label for="instock">In Stock <span>{{inStock}}</span>
+                            </label>
+
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-widget mt-50" ngModelGroup="color">
+            <h4 class="pro-sidebar-title">Colour </h4>
+            <div class="sidebar-widget-list mt-20">
+                <ul>
+                    <li *ngFor="let color of colors | keyvalue">
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" id={{color.key}} name={{color.key}} ngModel> <label
+                                for={{color.key}}>{{color.key}}<span>{{color.value}}</span> </label>
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-widget mt-40" ngModelGroup="size">
+            <h4 class="pro-sidebar-title">Size </h4>
+            <div class="sidebar-widget-list mt-20">
+                <ul>
+                    <li *ngFor="let size of sizes | keyvalue">
+                        <div class="sidebar-widget-list-left">
+                            <input type="checkbox" id={{size.key}} name={{size.key}} ngModel> <label
+                                for={{size.key}}>{{size.key}}<span>{{size.value}}</span>
+                            </label>
+                            <span class="checkmark"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-widget mt-50">
+            <h4 class="pro-sidebar-title">Tag </h4>
+            <div class="sidebar-widget-tag mt-25">
+                <ul>
+                    <li *ngFor="let tag of tags"><a href="#">{{tag}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="links" *ngIf="fil | async" class="mb-50">
+            <input (click)="onReset($event)" type="reset" style="color:blue;  background:none; border:none;"
+                class="mr-30" value="Clear All">
+            <button style="width:100%;" (click)="closeFilter($event)">Done</button>
+        </div>
+    </form>
+</div>

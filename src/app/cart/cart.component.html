@@ -1,0 +1,41 @@
+<div class="cart-wrap">
+    <button class="icon-cart-active" (click)="onClick($event)">
+        <span class="icon-cart">
+            <i class="sli sli-bag"></i>
+            <span class="count-style">{{(cart|async).length}}</span>
+        </span>
+        <span class="cart-price">
+            {{cartTotal|async | currency}}
+        </span>
+    </button>
+    <div class="shopping-cart-content" [class.show]="show|async">
+        <div class="shopping-cart-top">
+            <h4>Shoping Cart</h4>
+            <a class="cart-close" (click)="onClose($event)" href="#"><i class="sli sli-close"></i></a>
+        </div>
+        <ul>
+            <li class="single-shopping-cart" *ngFor="let item of cart|async">
+                <div class="shopping-cart-img">
+                    <a><img alt="" [src]="item.img[0]" /></a>
+                    <div class="item-close">
+                        <a (click)="removeItem($event,item.id)"><i class="sli sli-close"></i></a>
+                    </div>
+                </div>
+                <div class="shopping-cart-title">
+                    <h4><a href="#">{{item.name}}</a></h4>
+                    <span>{{item.quantity}} x {{item.newPrice| currency}}</span>
+                </div>
+            </li>
+        </ul>
+        <div class="shopping-cart-bottom">
+            <div class="shopping-cart-total">
+                <h4>Total : <span class="shop-total">{{cartTotal|async | currency}}
+                    </span></h4>
+            </div>
+            <div class="shopping-cart-btn btn-hover text-center">
+                <a class="default-btn" (click)="onClose($event)" routerLink="/checkout">checkout</a>
+                <a class="default-btn" (click)="onClose($event)" routerLink="/cart">view cart</a>
+            </div>
+        </div>
+    </div>
+</div>

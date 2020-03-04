@@ -1,0 +1,22 @@
+<div class="product-area pb-70">
+    <div class="container">
+        <div class="section-title text-center pb-40">
+            <h2>All Products</h2>
+            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                classical</p>
+        </div>
+        <div class="product-tab-list nav pb-60 text-center">
+            <a href="#product-1" *ngFor="let tab of tabs | async" [class.active]="tab.isActive"
+                (click)="tabChange($event,tab)">
+                <h4>{{tab.name}}</h4>
+            </a>
+        </div>
+        <div class="tab-content jump-2">
+            <div class="tab-pane active" *ngFor="let tab of tabs | async" [class.active]=tab.isActive>
+                <div class="ht-products product-slider-active owl-carousel">
+                    <app-card class="bp-card" *ngFor="let product of tab.products" [product]="product"></app-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

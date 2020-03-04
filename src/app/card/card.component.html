@@ -1,0 +1,73 @@
+<div class="ht-product ht-product-action-on-hover ht-product-category-right-bottom mb-30">
+    <!-- style="width:270px;margin-right:30px" -->
+    <div class="ht-product-inner">
+        <div class="ht-product-image-wrap">
+            <a [routerLink]="product._id" class="ht-product-image"> <img [src]="product.img[0]"
+                    alt="Universal Product Style">
+            </a>
+            <div class="ht-product-action">
+                <ul>
+                    <li><a (click)="showQV($event)" data-toggle="modal" data-target="#exampleModal"><i
+                                class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick
+                                View</span></a></li>
+                    <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to
+                                Wishlist</span></a>
+                    </li>
+                    <li><a (click)="addToCart($event)"><i class="sli sli-bag"></i><span
+                                class="ht-product-action-tooltip">Add to
+                                Cart</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ht-product-content">
+            <div class="ht-product-content-inner">
+                <div class="ht-product-categories"><a
+                        [href]="product.categoryLink">{{(product.category.length>5)?product.category.split('-')[0]:product.category }}</a>
+                </div>
+                <h4 class="ht-product-title"><a [routerLink]="product._id"
+                        data-toggle="product.name">{{(product.name.length>27)? product.name.slice(0,24)+'...':product.name}}
+                    </a></h4>
+                <div class="ht-product-price">
+                    <span [class.new]="product.onsale">{{product.newPrice | currency}}</span>
+
+                    <span *ngIf="product.onsale" class="old">{{product.oldPrice | currency}}</span>
+                </div>
+                <div class="ht-product-ratting-wrap">
+                    <span class="ht-product-ratting">
+                        <span class="ht-product-user-ratting" style="width: 100%;">
+                            <i class="sli sli-star"></i>
+                            <i class="sli sli-star"></i>
+                            <i class="sli sli-star"></i>
+                            <i class="sli sli-star"></i>
+                            <i class="sli sli-star"></i>
+                        </span>
+                        <i class="sli sli-star"></i>
+                        <i class="sli sli-star"></i>
+                        <i class="sli sli-star"></i>
+                        <i class="sli sli-star"></i>
+                        <i class="sli sli-star"></i>
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="ht-product-action">
+                <ul>
+                    <li><a href="#"><i class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick
+                                View</span></a></li>
+                    <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to
+                                Wishlist</span></a>
+                    </li>
+                    <li><a href="#"><i class="sli sli-refresh"></i><span class="ht-product-action-tooltip">Add to
+                                Compare</span></a>
+                    </li>
+                    <li><a href="#"><i class="sli sli-bag"></i><span class="ht-product-action-tooltip">Add to
+                                Cart</span></a>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="ht-product-countdown-wrap">
+                <div class="ht-product-countdown" data-countdown="2020/01/01"></div>
+            </div>
+        </div>
+    </div>
+</div>

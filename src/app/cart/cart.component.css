@@ -1,0 +1,328 @@
+.cart-wrap {
+  position: relative;
+}
+.cart-wrap > button {
+  background-color: transparent;
+  border: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+}
+.cart-wrap > button span.icon-cart {
+  font-size: 20px;
+  position: relative;
+}
+.cart-wrap > button span.icon-cart .count-style {
+  position: absolute;
+  right: -7px;
+  top: -19px;
+  background-color: #1f2226;
+  color: #fff;
+  font-size: 13px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 100%;
+}
+.cart-wrap > button span.cart-price {
+  font-size: 16px;
+  margin-left: 4px;
+  display: block;
+  line-height: 1;
+}
+.cart-wrap > button:hover span.icon-cart {
+  color: #ff3535;
+}
+.cart-wrap .shopping-cart-content {
+  background: #fff none repeat scroll 0 0;
+  padding: 28px 30px 20px;
+  position: absolute;
+  right: -450px;
+  top: 67px;
+  width: 340px;
+  z-index: 9999;
+  -webkit-box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0.4px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 108px);
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  overflow-y: auto;
+  opacity: 0;
+  visibility:hidden;
+}
+.cart-wrap .shopping-cart-content.show {
+  visibility: visible ;
+  opacity: 1;
+  right: -315px;
+}
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  .cart-wrap .shopping-cart-content.show {
+    right: -55px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+  .cart-wrap .shopping-cart-content.show {
+    right: -45px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .cart-wrap .shopping-cart-content.show {
+    right: -47px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cart-wrap .shopping-cart-content.show {
+    right: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cart-wrap .shopping-cart-content.show {
+    right: 5px;
+    width: 300px;
+  }
+}
+.cart-wrap .shopping-cart-content .shopping-cart-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+}
+.cart-wrap .shopping-cart-content .shopping-cart-top h4 {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1;
+  color: #000000;
+}
+.cart-wrap .shopping-cart-content .shopping-cart-top a {
+  color: #000000;
+  font-size: 16px;
+}
+.cart-wrap .shopping-cart-content .shopping-cart-top a:hover {
+  color: #ff3535;
+}
+.cart-wrap .shopping-cart-content ul {
+  height: 450px;
+  overflow-y: auto;
+}
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  .cart-wrap .shopping-cart-content ul {
+    height: 200px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+  .cart-wrap .shopping-cart-content ul {
+    height: 200px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .cart-wrap .shopping-cart-content ul {
+    height: 200px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cart-wrap .shopping-cart-content ul {
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cart-wrap .shopping-cart-content ul {
+    height: 100px;
+  }
+}
+.cart-wrap .shopping-cart-content ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.cart-wrap .shopping-cart-content ul li .shopping-cart-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 90px;
+  flex: 0 0 90px;
+  margin-right: 20px;
+  position: relative;
+}
+.cart-wrap .shopping-cart-content ul li .shopping-cart-img img {
+  width: 100%;
+}
+.cart-wrap .shopping-cart-content ul li .shopping-cart-img .item-close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.cart-wrap .shopping-cart-content ul li .shopping-cart-title h4 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+.cart-wrap .shopping-cart-content ul li .shopping-cart-title h4 a {
+  color: #000000;
+  line-height: 1;
+  display: block;
+}
+.cart-wrap .shopping-cart-content ul li .shopping-cart-title h4 a:hover {
+  color: #ff3535;
+}
+.cart-wrap .shopping-cart-content ul li .shopping-cart-title span {
+  font-size: 14px;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.2px;
+}
+.cart-wrap .shopping-cart-content ul li:last-child {
+  margin-bottom: 0;
+}
+.cart-wrap .shopping-cart-content ul li:hover .shopping-cart-img .item-close {
+  opacity: 1;
+  visibility: visible;
+}
+.cart-wrap .shopping-cart-content .shopping-cart-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+}
+.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-total {
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 18px 0px 17px;
+  margin: 30px 0 30px;
+}
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-total {
+    margin: 15px 0 15px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-total {
+    margin: 15px 0 15px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-total {
+    margin: 15px 0 15px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-total {
+    margin: 15px 0 15px;
+  }
+}
+.cart-wrap
+  .shopping-cart-content
+  .shopping-cart-bottom
+  .shopping-cart-total
+  h4 {
+  font-size: 16px;
+  color: #000000;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+.cart-wrap
+  .shopping-cart-content
+  .shopping-cart-bottom
+  .shopping-cart-total
+  h4
+  span {
+  float: right;
+}
+.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn {
+  margin-top: 23px;
+}
+.cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a {
+  margin-bottom: 10px;
+  padding: 16px 40px 17px;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  text-transform: uppercase;
+  border: 1px solid #cccccc;
+}
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a {
+    padding: 12px 40px 13px;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a {
+    padding: 12px 40px 13px;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a {
+    padding: 12px 40px 13px;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a {
+    padding: 12px 40px 13px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cart-wrap .shopping-cart-content .shopping-cart-bottom .shopping-cart-btn a {
+    padding: 12px 40px 13px;
+    font-size: 14px;
+  }
+}
+.cart-wrap
+  .shopping-cart-content
+  .shopping-cart-bottom
+  .shopping-cart-btn
+  a:hover {
+  background-color: #ff3535;
+  color: #ffffff;
+  border: 1px solid #ff3535;
+}
+.cart-wrap
+  .shopping-cart-content
+  .shopping-cart-bottom
+  .shopping-cart-btn
+  a:last-child {
+  margin-bottom: 0;
+}
+
+.wrapper-cart .body-overlay-2 {
+  background-color: transparent;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 999;
+}
+
+.wrapper-cart.overlay-active-2 .body-overlay-2 {
+  opacity: 1;
+  visibility: visible;
+}

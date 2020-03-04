@@ -1,0 +1,87 @@
+<app-breadcrumb></app-breadcrumb>
+<div class="product-details-area pt-100 pb-95">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product-details-img">
+
+                    <div id="gallery" class="mr-20 product-dec-slider">
+                        <a *ngFor="let i of item.img" (click)="onSelect($event,i)"
+                            [class.active-img]="i === item.img[index]">
+                            <img [src]="i">
+                        </a>
+                    </div>
+
+
+                    <div class="img-live">
+                        <img [src]="item.img[index]" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product-details-content ml-30">
+                    <h2>{{ item.name}}</h2>
+                    <div class="product-details-price">
+                        <span>{{ item.newPrice | currency }}</span>
+                        <span class="old">{{ item.oldPrice | currency}}</span>
+                    </div>
+                    <!-- <div class="pro-details-rating-wrap">
+                        <div class="pro-details-rating">
+                            <i class="sli sli-star yellow"></i>
+                            <i class="sli sli-star yellow"></i>
+                            <i class="sli sli-star yellow"></i>
+                            <i class="sli sli-star yellow"></i>
+                            <i class="sli sli-star yellow"></i>
+                        </div>
+                        <span><a href="#">3 Reviews</a></span>
+                    </div> -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore
+                        magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco</p>
+                    <div class="pro-details-list">
+                        <ul>
+                            <li>- 0.5 mm Dail</li>
+                            <li>- Inspired vector icons</li>
+                            <li>- Very modern style </li>
+                        </ul>
+                    </div>
+                    <div class="pro-details-size-color">
+                        <div class="pro-details-color-wrap">
+                            <span>Color</span>
+                            <div class="pro-details-color-content">
+                                <ul>
+                                    <li class="blue"></li>
+                                    <li class="maroon active"></li>
+                                    <li class="gray"></li>
+                                    <li class="green"></li>
+                                    <li class="yellow"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pro-details-size">
+                            <span>Size</span>
+                            <div class="pro-details-size-content">
+                                <ul>
+                                    <li *ngFor="let s of item.size"><a href="#">{{s}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-details-quality">
+                        <div class="cart-plus-minus">
+                            <input class="cart-plus-minus-box" type="text" name="qtybutton" [(ngModel)]="quantity">
+                        </div>
+                        <div class="pro-details-cart btn-hover">
+                            <a (click)="addToCart($event)">Add To Cart</a>
+                        </div>
+                        <div class=" pro-details-wishlist">
+                            <a title="Add To Wishlist" href="#"><i class="sli sli-heart"></i></a>
+                        </div>
+                        <div class="pro-details-compare">
+                            <a title="Add To Compare" href="#"><i class="sli sli-refresh"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

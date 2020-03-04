@@ -1,0 +1,57 @@
+<div class="slider-area section-padding-1">
+    <div class="slider-active  nav-style-1">
+        <div class="single-slider slider-height-1 bg-paleturquoise">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="slider-content slider-animated-1" @slideInLeft *ngFor="let slide of slides"
+                            [style.position]="slide.position" [class.show]="slide.show" [class.hideTxt]="slide.hide">
+                            <h1 class="animated">{{slide.title}}</h1>
+                            <p class="animated">{{slide.text}}</p>
+                            <div class="slider-btn btn-hover">
+                                <a class="animated" href="shop.html">Shop Now <i class="sli sli-basket-loaded"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="slider-single-img slider-animated-1" @slideInRight>
+                            <img [attr.src]="slide.imgLink" alt="" *ngFor="let slide of slides"
+                                [style.position]="slide.position" [class.show]="slide.show"
+                                [class.hideImg]="slide.hide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="single-slider slider-height-1 bg-paleturquoise">
+
+
+[style.opacity]="out"
+
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="slider-content slider-animated-1">
+                            <h1 class="animated">Wooden Craft</h1>
+                            <p class="animated">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. It is a long established fact that a reader.</p>
+                            <div class="slider-btn btn-hover">
+                                <a class="animated" href="shop.html">Shop Now <i class="sli sli-basket-loaded"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="slider-single-img slider-animated-1">
+                            <img class="animated" src="assets/img/slider/slider-hm1-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="owl-nav">
+        <div class="owl-prev" (click)="prev()"><i class="sli sli-arrow-left"></i></div>
+        <div class="owl-next" (click)="next()"><i class="sli sli-arrow-right"></i></div>
+    </div>
+</div>

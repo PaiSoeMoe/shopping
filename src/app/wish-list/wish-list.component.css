@@ -1,0 +1,112 @@
+@media only screen and (max-width: 767px) {
+.cart-main-area.pb-100 {
+padding-bottom: 60px; } }
+
+h3.cart-page-title {
+font-size: 20px;
+font-weight: 500;
+margin: 0 0 15px; }
+
+.cart-table-content table {
+border: 1px solid #ebebeb; }
+.cart-table-content table thead > tr {
+background-color: #f9f9f9;
+border: 1px solid #ebebeb; }
+.cart-table-content table thead > tr th {
+border-top: medium none;
+font-size: 14px;
+font-weight: 600;
+padding: 21px 45px 22px;
+text-align: center;
+text-transform: uppercase;
+vertical-align: middle;
+white-space: nowrap; }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+.cart-table-content table thead > tr th {
+padding: 21px 35px 22px; } }
+@media only screen and (max-width: 767px) {
+.cart-table-content table thead > tr th {
+padding: 21px 20px 22px; } }
+.cart-table-content table tbody > tr {
+border-bottom: 1px solid #ebebeb; }
+.cart-table-content table tbody > tr td.product-thumbnail {
+width: 150px; }
+.cart-table-content table tbody > tr td.product-name {
+width: 435px; }
+.cart-table-content table tbody > tr td.product-name a {
+font-size: 16px;
+font-weight: 400;
+font-family: "Roboto", sans-serif; }
+.cart-table-content table tbody > tr td.product-name a:hover {
+color: #ff3535; }
+.cart-table-content table tbody > tr td.product-price-cart {
+width: 435px; }
+.cart-table-content table tbody > tr td.product-price-cart span {
+color: #1f2226; }
+.cart-table-content table tbody > tr td.product-quantity {
+width: 435px; }
+.cart-table-content table tbody > tr td.product-quantity .cart-plus-minus {
+display: inline-block;
+height: 40px;
+padding: 0;
+position: relative;
+width: 110px; }
+.cart-table-content table tbody > tr td.product-quantity .cart-plus-minus .qtybutton {
+color: #333;
+cursor: pointer;
+float: inherit;
+font-size: 16px;
+margin: 0;
+position: absolute;
+-webkit-transition: all 0.3s ease 0s;
+-o-transition: all 0.3s ease 0s;
+transition: all 0.3s ease 0s;
+width: 20px;
+text-align: center; }
+.cart-table-content table tbody > tr td.product-quantity .cart-plus-minus .dec.qtybutton {
+border-right: 1px solid #e5e5e5;
+height: 40px;
+left: 0;
+padding-top: 8px;
+top: 0; }
+.cart-table-content table tbody > tr td.product-quantity .cart-plus-minus .inc.qtybutton {
+border-left: 1px solid #e5e5e5;
+height: 40px;
+padding-top: 9px;
+right: 0;
+top: 0; }
+.cart-table-content table tbody > tr td.product-quantity .cart-plus-minus input.cart-plus-minus-box {
+color: #333;
+float: left;
+font-size: 14px;
+height: 40px;
+margin: 0;
+width: 110px;
+background: transparent none repeat scroll 0 0;
+border: 1px solid #e1e1e1;
+padding: 0;
+text-align: center; }
+.cart-table-content table tbody > tr td.product-remove {
+width: 100px; }
+.cart-table-content table tbody > tr td.product-remove a {
+font-size: 17px;
+margin: 0 13px; }
+.cart-table-content table tbody > tr td.product-remove a:hover {
+color: #ff3535; }
+.cart-table-content table tbody > tr td.product-wishlist-cart > a {
+background-color: #ff3535;
+color: #fff;
+font-size: 12px;
+font-weight: 600;
+line-height: 1;
+padding: 7px 12px;
+text-transform: uppercase; }
+.cart-table-content table tbody > tr td.product-wishlist-cart > a:hover {
+background-color: #1f2226; }
+.cart-table-content table tbody > tr td {
+font-size: 16px;
+padding: 30px 0;
+text-align: center; }
+
+
+
