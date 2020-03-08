@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SearchComponent } from './header/main-header/search/search.component';
 import { HomeComponent } from './home/home.component';
 import { MobileMenuWrapComponent } from './mobile-menu-wrap/mobile-menu-wrap.component';
-
+import { ToastrModule } from 'ngx-toastr'
 import { SliderComponent } from './slider/slider.component';
 import { BannerAreaComponent } from './banner-area/banner-area.component';
 import { CardComponent } from './card/card.component';
@@ -66,7 +66,7 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
     MyAccountComponent,
     LoginRegisterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgReduxModule, BrowserAnimationsModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, NgReduxModule, BrowserAnimationsModule, FormsModule, HttpClientModule, ToastrModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,7 @@ import { Product, IAppState } from 'src/app/store'
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 import { SET_PRODUCTS, SHOW_HIDE_FILTER } from 'src/app/actions';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,8 @@ import { SET_PRODUCTS, SHOW_HIDE_FILTER } from 'src/app/actions';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  constructor(private ngRedux: NgRedux<IAppState>, private route: ActivatedRoute, private http: HttpService) { }
+  constructor(private ngRedux: NgRedux<IAppState>, private route: ActivatedRoute, private http: HttpService,
+    private toastr: ToastrService) { }
 
   pageNo = 1;
   colors
@@ -54,6 +56,7 @@ export class ProductsComponent implements OnInit {
 
 
   onChange(e) {
+    this.toastr.success("you are", "Dumb")
     this.tags = [this.cat];
     this.tags = this.tags.concat(this.subcat);
     this.pageNo = 1;
