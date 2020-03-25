@@ -11,10 +11,157 @@ import { SHOW_MOBILE_MENU } from '../actions';
 })
 export class MobileMenuWrapComponent implements OnInit {
   @select('showMobileMenu') showMobileMenu;
+
   data = [
+    {
+      topNavLink: "Men",
+      link: "products/men/all",
+      active: false,
+      children: true,
+      subs: [
+        {
+          sub: "Special Offers",
+          link: "special-offers",
+          active: false,
+          items: [{
+            name: "20% Discount",
+            link: "products/men/20-discount"
+          }, {
+            name: "Buy one get one",
+            link: "products/men/buy-one-get-one"
+          }]
+        },
+        {
+          sub: "Clothing",
+          link: "clothing",
+          active: false,
+          items: [{
+            name: "New Arrival",
+            link: "products/men/new-arrival"
+          },
+          {
+            name: "Hoodies & Sweatshirts",
+            link: "products/men/hoodies-sweatshirts"
+          }, {
+            name: "Jackets & Outerwear",
+            link: "products/men/jackets-outerwear"
+          }, {
+            name: "Denim & Jeans",
+            link: "products/men/denim-jeans"
+          }, {
+            name: "Graphic Tees",
+            link: "products/men/graphic-tees"
+          }, {
+            name: "Tops",
+            link: "products/men/tops"
+          }
+          ]
+        },
+        {
+          sub: "Accessories",
+          link: "accessories",
+          active: false,
+          items: [
+            {
+              name: "Shoes",
+              link: "products/men/shoes"
+            },
+            {
+              name: "Hats & Beanies",
+              link: "products/men/hats-beanies"
+            },
+            {
+              name: "Bags & Backpacks",
+              link: "products/men/bags-backpacks"
+            },
+            {
+              name: "Sunglasses",
+              link: "products/men/sunglasses"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      topNavLink: "Women",
+      active: false,
+      link: "products/womens/all",
+      children: true,
+      subs: [
+        {
+          sub: "Special Offers",
+          link: "special-offers",
+          active: false,
+          items: [{
+            name: "20% Discount",
+            link: "products/women/20-discount"
+          }, {
+            name: "Buy one get one",
+            link: "products/women/buy-one-get-one"
+          }]
+        },
+        {
+          sub: "Clothing",
+          link: "clothing",
+          active: false,
+          items: [{
+            name: "New Arrival",
+            link: "products/women/new-arrival"
+          },
+          {
+            name: "Tops",
+            link: "products/women/tops"
+          },
+          {
+            name: "Dresses",
+            link: "products/women/dresses"
+          },
+          {
+            name: "Jackets & Outerwear",
+            link: "products/women/jackets-outerwear"
+          },
+          {
+            name: "Denim & Jeans",
+            link: "products/women/denim-jeans"
+          },
+          {
+            name: "Lingerie & Sleepwear",
+            link: "products/women/lingerie-sleepwear"
+          },
+          {
+            name: "Rompers & Jumpsuits",
+            link: "products/women/rompers-jumpsuits"
+          }
+          ]
+        }, {
+          sub: "Accessories",
+          link: "accessories",
+          active: false,
+          items: [
+            {
+              name: "Shoes",
+              link: "products/women/shoes"
+            },
+            {
+              name: "Bags & Backpacks",
+              link: "products/women/bags-backpacks"
+            },
+            {
+              name: "Sunglasses",
+              link: "products/women/sunglasses"
+            }
+          ]
+        }
+      ]
+    }]
+
+  datas = [
     { topNavLink: "New Arrival", children: false },
     {
-      topNavLink: "Men", link: "#", active: false, aniState: "out", children: true,
+      topNavLink: "Men",
+      link: "#",
+      active: false,
+      children: true,
       subs: [
         { sub: "Special Offers", active: false, items: [{ name: '1' }, { name: '2' }] },
         { sub: "Shop By Category", active: false, items: [{ name: '1' }, { name: '2' }] }
