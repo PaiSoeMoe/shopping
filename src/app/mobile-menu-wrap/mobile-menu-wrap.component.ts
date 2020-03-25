@@ -153,7 +153,9 @@ export class MobileMenuWrapComponent implements OnInit {
           ]
         }
       ]
-    }]
+    },
+    { topNavLink: "Shoes", children: false },
+    { topNavLink: "Accessories", children: false }]
 
   datas = [
     { topNavLink: "New Arrival", children: false },
