@@ -26,7 +26,8 @@ export class ProductDetailComponent implements OnInit {
       console.log(this.item);
     })
   }
-  addToCart() {
+  addToCart(e) {
+    e.stopPropagation();
     let item = Object.assign({}, this.item, { quantity: this.quantity });
 
     this.ngRedux.dispatch({ type: ADD_TO_CART, payload: item })

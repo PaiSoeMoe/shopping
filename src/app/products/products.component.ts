@@ -33,6 +33,7 @@ export class ProductsComponent implements OnInit {
       this.cat = v[1];
       this.subcat = v[2];
       this.http.getProduct(this.cat, this.subcat).subscribe((x) => {
+        console.log(x);
         this.ngRedux.dispatch({ type: SET_PRODUCTS, payload: x })
         this.products = this.ngRedux.getState().products
         this.sizes = this.counter(this.products, 'size');
@@ -56,7 +57,7 @@ export class ProductsComponent implements OnInit {
 
 
   onChange(e) {
-    this.toastr.success("you are", "Dumb")
+
     this.tags = [this.cat];
     this.tags = this.tags.concat(this.subcat);
     this.pageNo = 1;

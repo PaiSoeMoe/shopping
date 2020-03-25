@@ -14,7 +14,7 @@ import { AuthService } from '../auth.service';
 })
 export class SettingComponent implements OnInit {
 
-  constructor(private eRef: ElementRef, private ngRedux: NgRedux<IAppState>, private auth: AuthService) { }
+  constructor(private eRef: ElementRef, private ngRedux: NgRedux<IAppState>, public auth: AuthService) { }
   @HostListener('document:click', ['$event']) clickOut(e) {
     e.stopImmediatePropagation();
     if (this.eRef.nativeElement.contains(e.target)) {

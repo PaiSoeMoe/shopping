@@ -57,32 +57,32 @@
   .footer-bottom .copyright-2 {
     text-align: inherit; } }
 
-.footer-bottom .payment-mathod {
+.footer-bottom .payment-method {
   text-align: right; }
   @media only screen and (max-width: 767px) {
-    .footer-bottom .payment-mathod {
+    .footer-bottom .payment-method {
       text-align: center; } }
-  .footer-bottom .payment-mathod a img {
+  .footer-bottom .payment-method a img {
     width: auto; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .footer-bottom .payment-mathod a img {
+      .footer-bottom .payment-method a img {
         width: 100%; } }
     @media only screen and (max-width: 767px) {
-      .footer-bottom .payment-mathod a img {
+      .footer-bottom .payment-method a img {
         width: 100%; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .footer-bottom .payment-mathod a img {
+      .footer-bottom .payment-method a img {
         width: auto; } }
 
-.footer-bottom .payment-mathod-2 {
+.footer-bottom .payment-method-2 {
   text-align: right; }
   @media only screen and (max-width: 767px) {
-    .footer-bottom .payment-mathod-2 {
+    .footer-bottom .payment-method-2 {
       text-align: center; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .footer-bottom .payment-mathod-2 {
+    .footer-bottom .payment-method-2 {
       text-align: right; } }
-  .footer-bottom .payment-mathod-2 a img {
+  .footer-bottom .payment-method-2 a img {
     width: auto; }
 
 .subscribe-style p {

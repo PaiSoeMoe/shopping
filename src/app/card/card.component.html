@@ -26,7 +26,7 @@
                         [href]="product.categoryLink">{{(product.category.length>5)?product.category.split('-')[0]:product.category }}</a>
                 </div>
                 <h4 class="ht-product-title"><a [routerLink]="product._id"
-                        data-toggle="product.name">{{(product.name.length>27)? product.name.slice(0,24)+'...':product.name}}
+                        data-toggle="product.name">{{(product.name.length>20)? product.name.slice(0,18)+'...':product.name}}
                     </a></h4>
                 <div class="ht-product-price">
                     <span [class.new]="product.onsale">{{product.newPrice | currency}}</span>

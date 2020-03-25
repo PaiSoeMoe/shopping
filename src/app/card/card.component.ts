@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   constructor(private ngRedux: NgRedux<IAppState>) { }
 
   ngOnInit() {
-    console.log(this.product)
+
   }
   showQV(e) {
     e.stopPropagation();

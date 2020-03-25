@@ -23,7 +23,6 @@ export class HttpService {
       }
       httpOptions = Object.assign({}, httpOptions, head)
     }
-    console.log(httpOptions);
 
     return this.http.get("http://localhost:3000/" + cat, httpOptions)
   }
