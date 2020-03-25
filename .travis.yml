@@ -1,0 +1,50 @@
+{
+  "language": "node_js",
+  "os": [
+    "linux"
+  ],
+  "dist": "xenial",
+  "node_js": [
+    "12.14.0"
+  ],
+  "env": {
+    "jobs": [
+      {
+        "addons": {
+          "firefox": "latest"
+        }
+      }
+    ],
+    "global": [
+      {
+        "-MOZ_HEADLESS": "1"
+      }
+    ]
+  },
+  "cache": {
+    "npm": true
+  },
+  "install": [
+    "npm ci"
+  ],
+  "before_script": [
+    "npm install -g @angular/cli"
+  ],
+  "script": [
+    "ng build --prod --base-href https://paisoemoe.github.io/shopping/"
+  ],
+  "deploy": [
+    {
+      "provider": "pages",
+      "strategy": "git",
+      "local_dir": "dist/shopping",
+      "on": {
+        "branch": [
+          "master"
+        ]
+      },
+      "skip_cleanup": true,
+      "token": "$GITHUB_TOKEN"
+    }
+  ]
+}
