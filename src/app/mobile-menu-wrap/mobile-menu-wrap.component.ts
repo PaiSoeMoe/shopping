@@ -85,7 +85,7 @@ export class MobileMenuWrapComponent implements OnInit {
     {
       topNavLink: "Women",
       active: false,
-      link: "products/womens/all",
+      link: "products/women/all",
       children: true,
       subs: [
         {
@@ -154,8 +154,8 @@ export class MobileMenuWrapComponent implements OnInit {
         }
       ]
     },
-    { topNavLink: "Shoes", children: false },
-    { topNavLink: "Accessories", children: false }]
+    { topNavLink: "Shoes", link: "products/shoes/all", children: false },
+    { topNavLink: "Accessories", link: "products/accessories/all", children: false }]
 
   datas = [
     { topNavLink: "New Arrival", children: false },

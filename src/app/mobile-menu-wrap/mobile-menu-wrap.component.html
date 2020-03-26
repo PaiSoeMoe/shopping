@@ -14,14 +14,15 @@
                 <nav>
                     <ul class="mobile-menu" *ngFor="let items of data">
                         <li [class.menu-item-has-children]="items.children" [class.active]="items.active"><a
-                                href="shop.html">{{items.topNavLink}}</a>
+                                [routerLink]="items.link">{{items.topNavLink}}</a>
                             <span class="menu-expand" (click)="onClick($event,items.topNavLink,false)"><i></i></span>
                             <ul class="dropdown" *ngIf="items.active">
                                 <li class="menu-item-has-children" [class.active]="item.active"
-                                    *ngFor="let item of items.subs"><a href="#">{{item.sub}}</a>
-                                    <span class="menu-expand" (click)="onClick($event,item.sub,true)"><i></i></span>
+                                    *ngFor="let item of items.subs" (click)="onClick($event,item.sub,true)"><a
+                                        [routerLink]=item.link>{{item.sub}}</a>
+                                    <span class="menu-expand"><i></i></span>
                                     <ul class="dropdown" *ngIf="item.active">
-                                        <li *ngFor="let i of item.items"><a href="shop.html">{{i.name}}</a></li>
+                                        <li *ngFor="let i of item.items"><a [routerLink]="i.link">{{i.name}}</a></li>
                                     </ul>
                                 </li>
                             </ul>

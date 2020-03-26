@@ -31,7 +31,7 @@
     "npm install -g @angular/cli"
   ],
   "script": [
-    "ng build --prod --base-href https://paisoemoe.github.io/shopping/"
+    "ng build --prod --base-href='https://paisoemoe.github.io/shopping/'"
   ],
   "deploy": [
     {

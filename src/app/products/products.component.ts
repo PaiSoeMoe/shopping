@@ -33,7 +33,6 @@ export class ProductsComponent implements OnInit {
       this.cat = v[1];
       this.subcat = v[2];
       this.http.getProduct(this.cat, this.subcat).subscribe((x) => {
-        console.log(x);
         this.ngRedux.dispatch({ type: SET_PRODUCTS, payload: x })
         this.products = this.ngRedux.getState().products
         this.sizes = this.counter(this.products, 'size');
