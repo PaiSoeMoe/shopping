@@ -16,6 +16,14 @@
   font-size: 20px;
   position: relative;
 }
+
+.shopping-cart-title h4 a{
+  font-size: 0.8em;
+}
+.shopping-cart-title span{
+  font-size: 0.8em;
+}
+
 .cart-wrap > button span.icon-cart .count-style {
   position: absolute;
   right: -7px;
@@ -141,11 +149,7 @@
   }
 }
 .cart-wrap .shopping-cart-content ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   margin-bottom: 30px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -166,11 +170,13 @@
   top: 10px;
   left: 10px;
   opacity: 0;
+
   visibility: hidden;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+
 .cart-wrap .shopping-cart-content ul li .shopping-cart-title h4 {
   font-size: 16px;
   margin: 0;

@@ -14,6 +14,7 @@ import { Route } from '@angular/compiler/src/core';
 })
 export class LoginRegisterComponent implements OnInit {
   @select('register') register;
+  error = false;
   constructor(private ngRedux: NgRedux<IAppState>, private router: Router, private auth: AuthService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -38,7 +39,9 @@ export class LoginRegisterComponent implements OnInit {
           this.router.navigate([returnUrl || '/']);
         } else {
         }
-      });;
+      }, err => {
+        this.error = true;
+      });
   }
 
   onRegister(e, name, password, email) {

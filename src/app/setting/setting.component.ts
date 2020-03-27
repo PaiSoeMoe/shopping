@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, ElementRef, Input } from '@angular/core';
 import { SlideInOutAnimation } from 'src/app/animate';
 import { select, NgRedux } from '@angular-redux/store';
-import { SHOW_HIDE_SETTING, HIDE_SETTING, SHOW_REGISTER, HIDE_REGISTER } from "src/app/actions";
+import { SHOW_HIDE_SETTING, HIDE_SETTING, SHOW_REGISTER, HIDE_REGISTER, CHANGE_CURRENCY } from "src/app/actions";
 import { IAppState } from 'src/app/store';
 import { AuthService } from '../auth.service';
 
@@ -45,5 +45,8 @@ export class SettingComponent implements OnInit {
   showLogin(e) {
     e.stopPropagation();
     this.ngRedux.dispatch({ type: HIDE_REGISTER })
+  }
+  changeCurrency(c: string) {
+    this.ngRedux.dispatch({ type: CHANGE_CURRENCY, payload: c });
   }
 }

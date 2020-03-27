@@ -15,7 +15,10 @@
                         <div id="lg1" class="tab-pane" [class.active]="(register | async)===false">
                             <div class="login-form-container">
                                 <div class="login-register-form">
-                                    <form action="#" method="post">
+                                    <form>
+                                        <div *ngIf="error" class="alert alert-danger">Invalid username / email address
+                                            and password
+                                            combination.</div>
                                         <input type="text" name="user-name" placeholder="Username" ngModel
                                             #name1="ngModel">
                                         <input type="password" name="user-password" placeholder="Password" ngModel
@@ -37,21 +40,24 @@
                             <div class="login-form-container">
                                 <div class="login-register-form">
                                     <form>
+
                                         <input type="text" name="user-name" placeholder="Username" ngModel
-                                            #name="ngModel">
-                                        <div class="alert alert-danger">Name is required.</div>
+                                            #name="ngModel" required>
+                                        <div class="alert alert-danger err"
+                                            *ngIf="name.touched && name.errors?.required">
+                                            Name is required.</div>
                                         <input type="password" name="user-password" placeholder="Password" required
                                             minlength="7" ngModel #password="ngModel">
                                         <div *ngIf="password.touched && password.errors?.required"
-                                            class="alert alert-danger">Password is required.</div>
+                                            class="alert alert-danger err">Password is required.</div>
                                         <div *ngIf="password.touched && password.errors?.minlength"
-                                            class="alert alert-danger">Password must be at least 7 characters long.
+                                            class="alert alert-danger err">Password must be at least 7 characters long.
                                         </div>
                                         <input name="user-email" placeholder="Email" type="email" required ngModel
                                             #email="ngModel">
                                         <div class="button-box">
-                                            <div *ngIf="password.touched && password.errors?.required"
-                                                class="alert alert-danger">Email is required.</div>
+                                            <div *ngIf="email.touched && email.errors?.required"
+                                                class="alert alert-danger err">Email is required.</div>
                                             <button type="submit"
                                                 (click)="onRegister($event,name.value,password.value,email.value)">Register</button>
                                         </div>

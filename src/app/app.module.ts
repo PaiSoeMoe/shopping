@@ -66,7 +66,7 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
     MyAccountComponent,
     LoginRegisterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgReduxModule, BrowserAnimationsModule, FormsModule, HttpClientModule, ToastrModule.forRoot()],
+  imports: [BrowserModule, AppRoutingModule, NgReduxModule, BrowserAnimationsModule, FormsModule, HttpClientModule, ToastrModule.forRoot({ timeOut: 500, positionClass: 'toast-bottom-right' })],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -32,20 +32,22 @@
                             <tbody>
                                 <tr *ngFor="let item of cart|async">
                                     <td class="product-thumbnail">
-                                        <a href="#"><img [src]="item.img" alt=""></a>
+                                        <a href="#"><img [src]="item.img[0]" alt=""></a>
                                     </td>
                                     <td class="product-name"><a href="#">{{item.name}}</a></td>
                                     <td class="product-price-cart"><span
-                                            class="amount">{{item.newPrice|currency}}</span></td>
+                                            class="amount">{{item.newPrice| currency:(currency|async):'symbol-narrow'}}</span>
+                                    </td>
                                     <td class="product-quantity">
                                         <div class="cart-plus-minus">
                                             <span class="quantity">{{item.quantity}}</span>
                                         </div>
                                     </td>
-                                    <td class="product-subtotal">{{item.quantity*item.newPrice|currency}}</td>
+                                    <td class="product-subtotal">
+                                        {{item.quantity*item.newPrice| currency:(currency|async):'symbol-narrow'}}
+                                    </td>
                                     <td class="product-remove">
-                                        <a href="#"><i class="sli sli-pencil"></i></a>
-                                        <a href="#"><i class="sli sli-close"></i></a>
+                                        <a (click)="removeItem($event,item.id)"><i class="sli sli-close"></i></a>
                                     </td>
                             </tbody>
                         </table>
@@ -84,14 +86,17 @@
                             <div class="title-wrap">
                                 <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
                             </div>
-                            <h5>Total products <span>{{cartTotal|async|currency}}</span></h5>
+                            <h5>Total products
+                                <span>{{cartTotal|async| currency:(currency|async):'symbol-narrow'}}</span>
+                            </h5>
                             <div class="total-shipping">
                                 <h5>Total shipping</h5>
                                 <ul>
-                                    <li>Standard <span>$7.00</span></li>
+                                    <li>Standard <span>7.99 | currency:(currency|async):'symbol-narrow'</span></li>
                                 </ul>
                             </div>
-                            <h4 class="grand-totall-title">Grand Total <span>{{(cartTotal|async)+7|currency}}</span>
+                            <h4 class="grand-totall-title">Grand Total
+                                <span>{{(cartTotal|async)+7.99| currency:(currency|async):'symbol-narrow'}}</span>
                             </h4>
                             <a routerLink="/checkout">Proceed to Checkout</a>
                         </div>

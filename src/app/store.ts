@@ -1,4 +1,4 @@
-import { HIDE_CART, SHOW_HIDE_CART, SHOW_HIDE_SETTING, HIDE_SETTING, SHOW_MOBILE_MENU, TAB_CHANGE, SHOW_QUICK_VIEW, HIDE_QUICK_VIEW, ADD_TO_CART, REMOVE_FROM_CART, SET_PRODUCTS, CLEAR_SHOPPING_CART, SHOW_HIDE_FILTER, SHOW_REGISTER, HIDE_REGISTER } from "src/app/actions";
+import { HIDE_CART, SHOW_HIDE_CART, SHOW_HIDE_SETTING, HIDE_SETTING, SHOW_MOBILE_MENU, TAB_CHANGE, SHOW_QUICK_VIEW, HIDE_QUICK_VIEW, ADD_TO_CART, REMOVE_FROM_CART, SET_PRODUCTS, CLEAR_SHOPPING_CART, SHOW_HIDE_FILTER, SHOW_REGISTER, HIDE_REGISTER, CHANGE_CURRENCY } from "src/app/actions";
 import { getCurrencySymbol } from '@angular/common';
 
 
@@ -58,7 +58,8 @@ export interface IAppState {
   modalItem: Array<Product>,
   cartTotal: Number
   filter: Boolean,
-  register: Boolean
+  register: Boolean,
+  currency: String
 }
 
 
@@ -70,7 +71,7 @@ export interface IAppState {
 export const INITIAL_STATE: IAppState = {
   products: [], filter: false,
   register: false,
-  cartShow: false, settAnimateState: "out", showMobileMenu: false, quickView: false, cart: [], modalItem: [], cartTotal: 0
+  cartShow: false, settAnimateState: "out", showMobileMenu: false, quickView: false, cart: [], modalItem: [], cartTotal: 0, currency: "USD"
 };
 export function rootReducer(state, action) {
   switch (action.type) {
@@ -107,10 +108,13 @@ export function rootReducer(state, action) {
       return Object.assign({}, state, { quickView: false })
     }
     case ADD_TO_CART: {
-      let index = state.cart.findIndex(x => x.id === action.payload.id);
+
+      let index = state.cart.findIndex(x => x.id === action.payload._id);
+
       if (index === -1) {
         return Object.assign({}, state, { cart: state.cart.concat(action.payload), cartTotal: state.cartTotal + (action.payload.newPrice * action.payload.quantity) });
       } else {
+
         let obj = state.cart
         obj[index].quantity = obj[index].quantity + action.payload.quantity
         return Object.assign({}, state, { cart: obj, cartTotal: state.cartTotal + (action.payload.quantity * action.payload.newPrice) });
@@ -121,7 +125,6 @@ export function rootReducer(state, action) {
       let index = state.cart.findIndex(x => x.id === action.payload)
       let obj = [...state.cart]
       let cartTotal = state.cartTotal - state.cart[index].newPrice * state.cart[index].quantity
-      console.log(obj);
       obj.splice(index, 1);
       return Object.assign({}, state, { cart: obj, cartTotal: cartTotal });
 
@@ -140,6 +143,9 @@ export function rootReducer(state, action) {
     }
     case HIDE_REGISTER: {
       return Object.assign({}, state, { register: false })
+    }
+    case CHANGE_CURRENCY: {
+      return Object.assign({}, state, { currency: action.payload });
     }
     default: {
       return state;

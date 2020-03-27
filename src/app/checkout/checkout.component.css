@@ -1,4 +1,7 @@
 /*-------- 22. Checkout style ---------*/
+.show{
+  display:inherit !important;
+}
 .customer-zone > p {
   font-size: 14px;
   position: relative;

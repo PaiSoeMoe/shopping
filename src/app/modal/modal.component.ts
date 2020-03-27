@@ -4,6 +4,7 @@ import { IAppState, Product } from '../store';
 import { HIDE_QUICK_VIEW, ADD_TO_CART } from '../actions';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-modal',
@@ -14,7 +15,7 @@ export class ModalComponent implements OnInit {
   @select("quickView") quickView;
   @select("modalItem") modalItem;
 
-  constructor(private ngRedux: NgRedux<IAppState>) { }
+  constructor(private ngRedux: NgRedux<IAppState>, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -27,5 +28,6 @@ export class ModalComponent implements OnInit {
   addToCart(e) {
     e.stopPropagation();
     this.ngRedux.dispatch({ type: ADD_TO_CART, payload: this.ngRedux.getState().modalItem });
+    this.toastr.success("Item added to cart.");
   }
 }

@@ -19,7 +19,7 @@ export class AuthService {
     localStorage.removeItem('x-auth-token');
   }
 
-  onRegister(name, password, email) {
+  onRegister(name: string, password: string, email: string) {
     let user = {
       name: name,
       password: password,
@@ -30,7 +30,7 @@ export class AuthService {
 
   }
 
-  onLogin(name, password) {
+  onLogin(name: string, password: string) {
     let user = {
       email: name,
       password: password

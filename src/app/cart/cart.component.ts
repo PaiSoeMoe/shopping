@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener, ElementRef, Input } from '@angular/cor
 import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from 'src/app/store';
 import { HIDE_CART, SHOW_HIDE_CART, REMOVE_FROM_CART } from "src/app/actions";
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -22,12 +23,14 @@ export class CartComponent implements OnInit {
     }
   }
   @select("cartShow") show
-  constructor(private eRef: ElementRef, private ngRedux: NgRedux<IAppState>) { }
+  constructor(private eRef: ElementRef, private ngRedux: NgRedux<IAppState>, private toastr: ToastrService) { }
 
   @select("cart") cart
   @select("cartTotal") cartTotal
+  @select("currency") currency
 
   ngOnInit() {
+
   }
   onClose(e) {
     e.preventDefault();
@@ -41,6 +44,7 @@ export class CartComponent implements OnInit {
   removeItem(e, id) {
     e.stopPropagation();
     this.ngRedux.dispatch({ type: REMOVE_FROM_CART, payload: id })
+    this.toastr.success("Item removed.")
   }
 
 }

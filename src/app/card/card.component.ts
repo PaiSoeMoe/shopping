@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgRedux } from '@angular-redux/store';
+import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from '../store';
 import { SHOW_QUICK_VIEW, ADD_TO_CART } from '../actions';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-card',
@@ -10,10 +11,12 @@ import { SHOW_QUICK_VIEW, ADD_TO_CART } from '../actions';
 })
 export class CardComponent implements OnInit {
   @Input("product") product
+  @select('currency') currency
 
-  constructor(private ngRedux: NgRedux<IAppState>) { }
+  constructor(private ngRedux: NgRedux<IAppState>, private toastr: ToastrService) { }
 
   ngOnInit() {
+
 
   }
   showQV(e) {
@@ -24,5 +27,10 @@ export class CardComponent implements OnInit {
     e.stopPropagation();
     let product = Object.assign({}, this.product, { quantity: 1 })
     this.ngRedux.dispatch({ type: ADD_TO_CART, payload: product });
+    this.toastr.success("Item added to cart.");
+  }
+
+  like() {
+    this.toastr.success("Liked");
   }
 }

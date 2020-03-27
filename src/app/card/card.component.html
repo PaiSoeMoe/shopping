@@ -10,8 +10,8 @@
                     <li><a (click)="showQV($event)" data-toggle="modal" data-target="#exampleModal"><i
                                 class="sli sli-magnifier"></i><span class="ht-product-action-tooltip">Quick
                                 View</span></a></li>
-                    <li><a href="#"><i class="sli sli-heart"></i><span class="ht-product-action-tooltip">Add to
-                                Wishlist</span></a>
+                    <li><a (click)="like()"><i class="sli sli-heart"></i><span
+                                class="ht-product-action-tooltip">Like</span></a>
                     </li>
                     <li><a (click)="addToCart($event)"><i class="sli sli-bag"></i><span
                                 class="ht-product-action-tooltip">Add to
@@ -29,9 +29,11 @@
                         data-toggle="product.name">{{(product.name.length>20)? product.name.slice(0,18)+'...':product.name}}
                     </a></h4>
                 <div class="ht-product-price">
-                    <span [class.new]="product.onsale">{{product.newPrice | currency}}</span>
+                    <span
+                        [class.new]="product.onsale">{{product.newPrice | currency:(currency|async):'symbol-narrow'}}</span>
 
-                    <span *ngIf="product.onsale" class="old">{{product.oldPrice | currency}}</span>
+                    <span *ngIf="product.onsale"
+                        class="old">{{product.oldPrice | currency:(currency|async):'symbol-narrow'}}</span>
                 </div>
                 <div class="ht-product-ratting-wrap">
                     <span class="ht-product-ratting">
