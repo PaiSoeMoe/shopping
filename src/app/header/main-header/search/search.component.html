@@ -4,14 +4,14 @@
 
 <div class="main-search-active" [class.inside]="show">
     <div class="sidebar-search-icon">
-        <button class="search-close" name="close-search" (click)="onClick()"><span
+        <button class="search-close" aria-label="close-search" (click)="onClick()"><span
                 class="sli sli-close"></span></button>
     </div>
     <div class="sidebar-search-input">
         <form>
             <div class="form-search">
                 <input id="search" class="input-text" aria-label="search" placeholder="Search Now" type="search" />
-                <button name="search-now">
+                <button aria-label="search-now">
                     <i class="sli sli-magnifier"></i>
                 </button>
             </div>
