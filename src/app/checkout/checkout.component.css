@@ -210,7 +210,7 @@
   font-size: 13px;
   height: 50px;
   padding: 2px 20px;
-  background: rgba(0, 0, 0, 0) url("../../assets/img/icon-img/select.png") no-repeat scroll right 18px center;
+  background: rgba(0, 0, 0, 0) url("../../assets/img/icon-img/select.webp") no-repeat scroll right 18px center;
   cursor: pointer; }
   .billing-info-wrap .billing-select select option {
     background: #fff;
