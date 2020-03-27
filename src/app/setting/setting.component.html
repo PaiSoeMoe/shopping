@@ -1,5 +1,5 @@
 <div class="setting-wrap">
-    <button class="setting-active" (click)="onClick($event)">
+    <button class="setting-active" name="show-setting" (click)="onClick($event)">
         <i class="sli sli-settings"></i>
     </button>
     <div class="setting-content" [@slideInOut]="settAnimateState | async">

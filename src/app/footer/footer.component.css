@@ -14,7 +14,7 @@
     font-family: "Roboto", sans-serif; }
 
 .footer-bottom .footer-social a {
-  color: #ababab;
+  color: #000000;
   font-family: "Roboto", sans-serif;
   margin-right: 26px; }
   .footer-bottom .footer-social a:hover {
@@ -37,13 +37,13 @@
     text-align: center; } }
 
 .footer-bottom .copyright p {
-  color: #919191;
+  color: #000000;
   margin: 0;
   font-family: "Roboto", sans-serif;
   line-height: 1; }
 
 .footer-bottom .copyright-2 p {
-  color: #444444;
+  color: #000000;
   margin: 0;
   font-family: "Roboto", sans-serif;
   line-height: 1;
@@ -86,7 +86,7 @@
     width: auto; }
 
 .subscribe-style p {
-  color: #5a5a5a;
+  color: #000000;
   margin: 0;
   width: 72%; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -100,8 +100,8 @@
   position: relative; }
   .subscribe-style .subscribe-form .mc-form input {
     background: transparent none repeat scroll 0 0;
-    border: 1px solid #444444;
-    color: #919090;
+    border: 1px solid #000000;
+    color: #000000;
     font-size: 14px;
     height: 50px;
     padding: 2px 60px 2px 30px;
