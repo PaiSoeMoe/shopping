@@ -32,7 +32,7 @@
   ],
   "script": [
     "ng build --prod --aot --base-href='https://paisoemoe.github.io/shopping/'"
-    # "gulp purifyCSS"
+    "gulp purifyCSS"
   ],
   "deploy": [
     {

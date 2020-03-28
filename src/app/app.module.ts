@@ -5,14 +5,14 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { HeaderComponent } from "./header/header.component";
-import { MainHeaderComponent } from "./header/main-header/main-header.component";
-import { MainNavComponent } from "./header/main-header/main-nav/main-nav.component";
+import { MainHeaderComponent } from "./main-header/main-header.component";
+import { MainNavComponent } from "./main-nav/main-nav.component";
 import { NgReduxModule, NgRedux, DevToolsExtension } from "@angular-redux/store";
 import { IAppState, rootReducer, INITIAL_STATE } from "./store";
 import { CartComponent } from './cart/cart.component';
 import { SettingComponent } from './setting/setting.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { SearchComponent } from './header/main-header/search/search.component';
+import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { MobileMenuWrapComponent } from './mobile-menu-wrap/mobile-menu-wrap.component';
 import { ToastrModule } from 'ngx-toastr'
