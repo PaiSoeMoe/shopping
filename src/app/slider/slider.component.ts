@@ -35,8 +35,6 @@ export class SliderComponent implements OnInit {
   }
   next() {
 
-    console.log(this.cur)
-    console.log(this.slides.length)
     if (this.cur + 1 === this.slides.length) {
       this.slides[this.cur].hide = true;
       this.slides[this.cur].show = false;
@@ -53,12 +51,7 @@ export class SliderComponent implements OnInit {
     }
 
   }
-  animate(e) {
-    console.log("i am started", e)
-  }
-  animate2(e) {
-    console.log("i am ended", e)
-  }
+
 
 
 
