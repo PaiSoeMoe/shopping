@@ -2,12 +2,12 @@
   "name": "shopping",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ng": "ngw",
+    "start": "ngw serve",
+    "build": "ngw build",
+    "test": "ngw test",
+    "lint": "ngw lint",
+    "e2e": "ngw e2e"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +45,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ngw": "^7.0.0",
     "protractor": "~5.4.0",
     "redux-devtools-extension": "^2.13.8",
     "ts-node": "~7.0.0",
