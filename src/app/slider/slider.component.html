@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
-                        <div class="slider-content slider-animated-1" @slideInLeft *ngFor="let slide of slides"
+                        <div class="slider-content slider-animated-1" *ngFor="let slide of slides"
                             [style.position]="slide.position" [class.show]="slide.show" [class.hideTxt]="slide.hide">
                             <h1 class="animated">{{slide.title}}</h1>
                             <p class="animated">{{slide.text}}</p>
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 col-sm-6">
-                        <div class="slider-single-img slider-animated-1" @slideInRight>
+                        <div class="slider-single-img slider-animated-1">
                             <img [attr.src]="slide.imgLink" alt="" *ngFor="let slide of slides"
                                 [style.position]="slide.position" [class.show]="slide.show"
                                 [class.hideImg]="slide.hide">
