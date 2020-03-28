@@ -5,7 +5,7 @@ import { SlideInLeft, SlideInRight } from '../animate';
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
-  // animations: [SlideInLeft, SlideInRight]
+  animations: [SlideInLeft, SlideInRight]
 })
 export class SliderComponent implements OnInit {
   cur = 0;
