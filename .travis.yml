@@ -31,7 +31,7 @@
     "npm install -g @angular/cli"
   ],
   "script": [
-    "ng build --env=prod --prod=true --aot=true --sourcemap=false --output-hashing=all --base-href='https://paisoemoe.github.io/shopping/'",
+    "ng build --prod --aot --base-href='https://paisoemoe.github.io/shopping/'",
     "gulp purifyCSS"
   ],
   "deploy": [
