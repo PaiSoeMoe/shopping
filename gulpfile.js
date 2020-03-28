@@ -10,7 +10,7 @@ gulp.task('purifyCSS', () => {
                     info: true, // Outputs reduction information (like in the screenshot above)
                     minify: true, // Minifies the files after reduction
                     rejected: false, // Logs the CSS rules that were removed
-                    whitelist: ['*transition*', '*dimmer*'] // Ignored css classes
+                    // whitelist: ['*transition*', '*dimmer*'] // Ignored css classes
                 }
             ),
         )
