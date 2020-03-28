@@ -1,5 +1,6 @@
 {
-  "language": "node_js",
+  
+"language": "node_js",
   "os": [
     "linux"
   ],
@@ -31,7 +32,7 @@
     "npm install -g @angular/cli"
   ],
   "script": [
-    "ng build --prod --aot --base-href='https://paisoemoe.github.io/shopping/'"
+    "ng build --prod --aot --base-href='https://paisoemoe.github.io/shopping/'",
     "gulp purifyCSS"
   ],
   "deploy": [
