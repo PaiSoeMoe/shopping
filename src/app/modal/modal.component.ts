@@ -3,7 +3,7 @@ import { select, NgRedux } from '@angular-redux/store';
 import { IAppState, Product } from '../store';
 import { HIDE_QUICK_VIEW, ADD_TO_CART } from '../actions';
 import { ActivatedRoute } from '@angular/router';
-import { HttpService } from '../http.service';
+import { HttpService } from '../services/http.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

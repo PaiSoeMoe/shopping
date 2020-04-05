@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { select, NgRedux } from '@angular-redux/store';
 import { IAppState } from '../store';
 import { SHOW_REGISTER, HIDE_REGISTER } from '../actions';
-import { HttpService } from '../http.service';
+import { HttpService } from '../services/http.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 import { Route } from '@angular/compiler/src/core';
 
 @Component({

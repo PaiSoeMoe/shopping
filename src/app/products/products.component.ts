@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { select, NgRedux } from '@angular-redux/store';
 import { Product, IAppState } from 'src/app/store'
 import { ActivatedRoute } from '@angular/router';
-import { HttpService } from '../http.service';
+import { HttpService } from '../services/http.service';
 import { SET_PRODUCTS, SHOW_HIDE_FILTER } from 'src/app/actions';
 import { ToastrService } from 'ngx-toastr';
+import { SortingService } from '../sorting.service';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductsComponent implements OnInit {
   constructor(private ngRedux: NgRedux<IAppState>, private route: ActivatedRoute, private http: HttpService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService, private sorting: SortingService) { }
 
   pageNo = 1;
   colors
@@ -152,7 +153,16 @@ export class ProductsComponent implements OnInit {
       return
     }
   }
-
+  sort(e) {
+    e.stopPropagation();
+    if (e.target.value === "") {
+      this.products = this.ngRedux.getState().products
+      this.init();
+      return -1;
+    }
+    this.products = this.sorting.sortBy(this.products, e.target.value);
+    this.init();
+  }
 
 }
 

@@ -3,7 +3,7 @@ import { SlideInOutAnimation } from 'src/app/animate';
 import { select, NgRedux } from '@angular-redux/store';
 import { SHOW_HIDE_SETTING, HIDE_SETTING, SHOW_REGISTER, HIDE_REGISTER, CHANGE_CURRENCY } from "src/app/actions";
 import { IAppState } from 'src/app/store';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({

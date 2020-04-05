@@ -9,6 +9,7 @@ import { SlideInLeft, SlideInRight } from '../animate';
 })
 export class SliderComponent implements OnInit {
   cur = 0;
+  innerWidth;
   slides = [{ imgLink: "assets/img/men-jacket/1.webp", position: 'absolute', title: "SPRING DENIM", text: "Starting at $22.90", hide: false, show: true, link: "products/men/denim-jeans" },
   { imgLink: "assets/img/1.webp", position: 'unset', title: "SPRING COLLECTION", text: "Starting at $10.00", hide: true, show: false, link: "products/women/all" }];
 

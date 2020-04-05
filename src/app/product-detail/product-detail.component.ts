@@ -58,4 +58,6 @@ export class ProductDetailComponent implements OnInit {
     this.index = this.item.img.findIndex(x => i === x);
   }
 
+  
+
 }

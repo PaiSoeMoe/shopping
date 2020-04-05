@@ -1,9 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, isDevMode } from "@angular/core";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-
 import { HeaderComponent } from "./header/header.component";
 import { MainHeaderComponent } from "./main-header/main-header.component";
 import { MainNavComponent } from "./main-nav/main-nav.component";
@@ -19,7 +17,6 @@ import { ToastrModule } from 'ngx-toastr'
 import { SliderComponent } from './slider/slider.component';
 import { BannerAreaComponent } from './banner-area/banner-area.component';
 import { CardComponent } from './card/card.component';
-
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { SidebarComponent } from './sidebar/sidebar.component';

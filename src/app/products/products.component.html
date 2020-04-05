@@ -6,16 +6,16 @@
                 <div class="col-lg-3" [class.show-filter]="filter |async">
                     <app-sidebar (filter)="onChange($event)" [tags]="tags" [sizes]="sizes" [colors]="colors"
                         [onSale]="onSale" [inStock]="inStock" (reset)="onReset($event)">
-                    </app-sidebar>
+                    </app-sidebar>8
                 </div>
                 <div class="col-lg-9">
                     <div class="shop-top-bar">
                         <div class="select-wrap">
                             <div class="shop-select  mr-15">
-                                <select>
-                                    <option value="">Sort by</option>
-                                    <option value="">Sort by price</option>
+                                <select (change)="sort($event)" style="width:auto; cursor:pointer;padding-right: 10px;">
                                     <option value="">Sort by relevance</option>
+                                    <option value='asc'>Sort by price (low to high)</option>
+                                    <option value="desc">Sort by price (high to low)</option>
                                 </select>
                             </div>
                             <button class="filter-by mr-15" (click)="showFilter($event)">Filter by</button>
@@ -23,7 +23,7 @@
 
                             <p class="mr-15">Showing
                                 {{(pageNo-1)*12 +1}}–{{products?.length>pageNo*12?pageNo*12:products?.length}} of
-                                {{products?.length}} result
+                                {{products?.length}} results
                             </p>
                         </div>
                     </div>
