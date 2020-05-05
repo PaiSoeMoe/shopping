@@ -2,7 +2,7 @@
 position: relative;
 overflow: hidden; }
 .single-banner a img {
-min-width: 100%;
+max-width: 100%;
 -webkit-transform: scale(1);
 -ms-transform: scale(1);
 transform: scale(1);
@@ -248,7 +248,7 @@ padding-left: 0px; } }
 padding-left: 0px; } }
 
 .banner-img-2 a img {
-min-width: 100%; }
+max-width: 100%; }
 
 @media only screen and (max-width: 767px) {
 .banner-img-2 {
