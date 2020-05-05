@@ -5,10 +5,7 @@
   transition: all 0.3s ease 0s;
 }
 
-img{
-  width:100%;
-  height:auto;
-}
+
 
 .header-right-wrap {
   display: -webkit-box;
