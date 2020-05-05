@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class HttpService {
 
+  url = "https://mysterious-everglades-83861.herokuapp.com/"
   constructor(private http: HttpClient) { }
   getProduct(cat, subcat, id: string = 'undefined') {
     let params = new HttpParams().set('category', cat);
@@ -24,16 +25,16 @@ export class HttpService {
       httpOptions = Object.assign({}, httpOptions, head)
     }
 
-    return this.http.get("http://localhost:3000/" + cat, httpOptions)
+    return this.http.get(this.url + cat, httpOptions)
   }
 
   register(user) {
-    return this.http.post("http://localhost:3000/register", user);
+    return this.http.post(this.url + "register", user);
   }
 
   login(user) {
 
-    return this.http.post("http://localhost:3000/login", user).pipe(map(x => {
+    return this.http.post(this.url + "login", user).pipe(map(x => {
       if (x) {
         console.log(x);
         localStorage.setItem(Object.keys(x)[0], x[Object.keys(x)[0]]);
