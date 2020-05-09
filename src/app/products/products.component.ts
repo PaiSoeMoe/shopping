@@ -17,13 +17,14 @@ export class ProductsComponent implements OnInit {
     private toastr: ToastrService, private sorting: SortingService) { }
 
   pageNo = 1;
-  colors
-  sizes
+  colors;
+  loading = true;
+  sizes;
   products;
   paginatedProducts;
   pages;
-  cat
-  subcat
+  cat;
+  subcat;
   tags = [];
   onSale;
   inStock;
@@ -37,6 +38,7 @@ export class ProductsComponent implements OnInit {
         console.log(x);
         this.ngRedux.dispatch({ type: SET_PRODUCTS, payload: x })
         this.products = this.ngRedux.getState().products
+        this.loading = false;
         this.sizes = this.counter(this.products, 'size');
         this.colors = this.counter(this.products, 'color');
         this.onSale = this.products.filter(x => x.onsale === true).length;

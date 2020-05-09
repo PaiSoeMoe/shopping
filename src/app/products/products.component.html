@@ -27,6 +27,11 @@
                             </p>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-center">
+                        <div *ngIf="loading" class="spinner-border" role="status" style="margin-top:1em;">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
                     <div class="shop-bottom-area mt-35">
                         <div class="tab-content jump">
                             <div id="shop-1" class="tab-pane active">
@@ -34,6 +39,7 @@
                                     <!-- "col-xl-4 col-md-4 col-lg-4 col-sm-6" -->
                                     <div class="product-wrapper">
                                         <!--Product Start-->
+
                                         <app-card class="bp-card" *ngFor="let product of paginatedProducts"
                                             [product]="product">
                                         </app-card>
